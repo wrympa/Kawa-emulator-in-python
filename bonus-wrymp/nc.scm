@@ -1,0 +1,10 @@
+(define (nc seq eq)
+  (map (lambda (x) (apply + (map (lambda (y) (if (eq x y) 1 0)) seq))) seq)
+)
+
+(define (dl seq)
+  (if (null? (cdr seq))
+    (list (* 2 (car seq)))
+    (cons (* 2 (car seq)) (dl (cdr seq)))
+  )
+)
